@@ -1,0 +1,11 @@
+-- Options are automatically loaded before lazy.nvim startup
+-- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
+-- Add any additional options here
+vim.g.lazyvim_picker = "fzf"
+
+if vim.g.neovide then
+  vim.opt.guifont = "Maple Mono NF CN Medium:h16"
+  vim.g.neovide_scale_factor = 1.0
+  vim.g.neovide_cursor_vfx_mode = "railgun"
+  vim.g.neovide_input_macos_option_key_is_meta = "only_left"
+end
