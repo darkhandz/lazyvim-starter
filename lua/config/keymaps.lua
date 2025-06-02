@@ -2,6 +2,12 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
+-- 命令模式C-v智能粘贴, 优先使用系统剪贴板，如果为空则使用默认寄存器
+vim.keymap.set("c", "<C-v>", function()
+  local system_clip = vim.fn.getreg("+")
+  return system_clip ~= "" and system_clip or vim.fn.getreg('"')
+end, { expr = true, desc = "Smart paste (system clipboard or default register)" })
+
 -- 快速搜索
 vim.keymap.set({ "n", "x" }, "<leader>'", "<cmd>FzfLua resume<cr>", { desc = "Resume" })
 vim.keymap.set({ "n" }, "<leader>*", LazyVim.pick("grep_cword"), { desc = "Word (Root Dir)" })
