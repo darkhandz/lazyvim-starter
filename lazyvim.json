@@ -2,7 +2,8 @@
   "extras": [
     "lazyvim.plugins.extras.coding.yanky",
     "lazyvim.plugins.extras.editor.dial",
-    "lazyvim.plugins.extras.editor.fzf"
+    "lazyvim.plugins.extras.editor.fzf",
+    "lazyvim.plugins.extras.util.project"
   ],
   "install_version": 8,
   "news": {
