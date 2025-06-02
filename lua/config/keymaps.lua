@@ -94,3 +94,13 @@ map("i", "<M-i>", "<Tab>", { silent = true, desc = "Insert raw Tab" })
 map("n", "<Tab>", "==", { silent = true, desc = "Indent line" })
 -- 可视模式 Tab：缩进选区
 map("v", "<Tab>", "=", { silent = true, desc = "Indent selection" })
+
+--[[ Neogit相关
+--------------------------------------------------------------------------------
+--]]
+vim.keymap.set("n", "<leader>ga", function()
+  require("utils.git").select_git_author(function(author)
+    vim.fn.setreg("+", author)
+    require("snacks").notify("Git author copied: " .. author)
+  end)
+end, { desc = "Select Git Author via fzf-lua" })
