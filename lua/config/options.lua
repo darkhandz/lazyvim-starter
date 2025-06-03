@@ -5,7 +5,9 @@
 vim.g.snacks_animate = false
 
 if vim.g.neovide then
-  vim.opt.guifont = "Maple Mono NF CN Medium:h16"
+  vim.opt.title = true
+  vim.opt.titlestring = vim.fs.basename(vim.fn.getcwd())
+  vim.opt.guifont = "Maple Mono NF CN SemiBold:h13"
   vim.g.neovide_scale_factor = 1.0
   -- vim.g.neovide_cursor_vfx_mode = "railgun"
   vim.g.neovide_input_macos_option_key_is_meta = "only_left"
