@@ -14,7 +14,8 @@ return {
     {
       "<leader>gG",
       function()
-        require("neogit").open()
+        local root_dir = require("lazyvim.util").root.get()
+        require("neogit").open({ cwd = root_dir })
       end,
       desc = "Neogit(Root dir)",
     },
