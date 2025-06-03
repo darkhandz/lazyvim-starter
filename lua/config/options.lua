@@ -14,3 +14,10 @@ if vim.g.neovide then
   -- vim.g.neovide_scroll_animation_length = 0.3
   -- vim.g.neovide_scroll_animation_far_lines = 1
 end
+
+-- 获取当前的 root_spec。如果还没有定义，则初始化一个空表。
+local current_root_spec = vim.g.root_spec or {}
+-- 插入 .projectile 规则到最前面，确保它拥有最高优先级。
+table.insert(current_root_spec, 1, { ".projectile" })
+-- 更新全局的 root_spec
+vim.g.root_spec = current_root_spec
