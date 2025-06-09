@@ -36,13 +36,7 @@ vim.keymap.set("i", "<C-d>", "<Del>", { desc = "Delete character" })
 -- Cmd-s用来保存(MacOS)
 vim.keymap.set({ "i", "x", "n", "s" }, "<D-s>", "<cmd>w<cr><esc>", { desc = "Save File" })
 
-local map = vim.keymap.set
--- 插入模式 Alt-i：始终插入 Tab
-map("i", "<M-i>", "<Tab>", { silent = true, desc = "Insert raw Tab" })
--- 普通模式 Tab：缩进当前行
-map("n", "<Tab>", "==", { silent = true, desc = "Indent line" })
--- 可视模式 Tab：缩进选区
-map("v", "<Tab>", "=", { silent = true, desc = "Indent selection" })
+vim.keymap.set("v", "<Tab>", "=", { silent = true, desc = "Indent selection" })
 
 --[[ Neogit相关
 --------------------------------------------------------------------------------
