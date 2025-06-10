@@ -20,10 +20,7 @@ vim.keymap.set({ "x" }, "\\", function()
 end, { desc = "Grep current buffer with selection" })
 vim.keymap.set({ "n" }, "\\", function()
   local utils = require("fzf-lua.utils")
-  require("fzf-lua").grep_curbuf({
-    no_esc = true,
-    search = [[\b]] .. utils.rg_escape(vim.fn.expand("<cword>")) .. [[\b]],
-  })
+  require("fzf-lua").grep_curbuf()
 end, { desc = "Grep current buffer with cursor word" })
 
 -- emacs编辑模式
